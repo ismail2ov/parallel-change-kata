@@ -39,6 +39,17 @@ public class ShoppingCartTest {
     }
 
     @Test
+    public void multipleItems_totalPrice() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.add(10);
+        shoppingCart.add(25);
+
+        int actual = shoppingCart.calculateTotalPrice();
+
+        assertThat(actual).isEqualTo(35);
+    }
+
+    @Test
     public void singleItem_hasDiscountIfContainsAtLeastOneProductWorthAtLeast100() {
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.add(100);
