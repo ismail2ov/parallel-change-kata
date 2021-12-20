@@ -24,7 +24,7 @@ public class ShoppingCart {
     }
 
     public boolean hasDiscount() {
-        return hasDiscount;
+        return prices.stream().anyMatch(integer -> integer >= 100);
     }
 
     public int numberOfProducts() {
