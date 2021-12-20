@@ -18,6 +18,17 @@ public class ShoppingCartTest {
     }
 
     @Test
+    public void multipleItems_numberOfProductsInTheCart() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.add(10);
+        shoppingCart.add(10);
+
+        int actual = shoppingCart.numberOfProducts();
+
+        assertThat(actual).isEqualTo(2);
+    }
+
+    @Test
     public void singleItem_totalPrice() {
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.add(10);
