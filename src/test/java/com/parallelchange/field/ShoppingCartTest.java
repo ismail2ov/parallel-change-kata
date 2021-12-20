@@ -80,4 +80,15 @@ public class ShoppingCartTest {
         assertThat(hasDiscount).isFalse();
     }
 
+    @Test
+    public void multipleItems_doesNotHaveDiscountIfContainsNoProductsWorthAtLeast100() {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.add(99);
+        shoppingCart.add(97);
+
+        boolean hasDiscount = shoppingCart.hasDiscount();
+
+        assertThat(hasDiscount).isFalse();
+    }
+
 }
