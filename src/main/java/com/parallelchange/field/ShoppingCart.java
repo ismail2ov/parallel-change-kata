@@ -28,6 +28,6 @@ public class ShoppingCart {
     }
 
     public int numberOfProducts() {
-        return numberOfProducts;
+        return prices.size();
     }
 }
