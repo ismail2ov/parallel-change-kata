@@ -3,8 +3,12 @@ package com.parallelchange.field;
 public class ShoppingCart {
     private int price;
     private int numberOfProducts;
+    private boolean hasDiscount;
 
     public void add(int price) {
+        if (price >= 100) {
+            hasDiscount = true;
+        }
         this.price += price;
         this.numberOfProducts++;
     }
@@ -14,7 +18,7 @@ public class ShoppingCart {
     }
 
     public boolean hasDiscount() {
-        return price >= 100;
+        return hasDiscount;
     }
 
     public int numberOfProducts() {
