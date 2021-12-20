@@ -1,9 +1,14 @@
 package com.parallelchange.field;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class ShoppingCart {
     private int price;
     private int numberOfProducts;
     private boolean hasDiscount;
+
+    private final List<Integer> prices = new LinkedList<>();
 
     public void add(int price) {
         if (price >= 100) {
@@ -11,6 +16,7 @@ public class ShoppingCart {
         }
         this.price += price;
         this.numberOfProducts++;
+        this.prices.add(price);
     }
 
     public int calculateTotalPrice() {
